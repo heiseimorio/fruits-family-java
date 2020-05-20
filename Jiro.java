@@ -37,19 +37,19 @@ public class Jiro {
     return data[3];
   }
   // 次郎が空腹かどうかを返す
-  public boolean isJiroHungry(int[] data) {
+  public boolean isHungry(int[] data) {
     // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
     return data[0] < (2000*0.8);
   }
 
   // 次郎の幸福度を返す
-  public int isJiroHappyPercent(int[] data) {
+  public int HappyPercent(int[] data) {
     // 次郎のデータは配列になってて、２つめが幸福度。
     return data[1];
   }
 
   // 次郎が食べる処理
-  public void eatJiro(int[] personData, String fruit, String[] fruitData) {
+  public void eat(int[] personData, String fruit, String[] fruitData) {
     // りんご
     if (fruit.equals("apple")) {
       String color = getAppleColor(fruitData);
