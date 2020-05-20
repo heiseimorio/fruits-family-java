@@ -1,5 +1,7 @@
 public class Saburo {
 
+  int[] saburoData = { 0, 0, 0, 0};
+
   // バナナの色を返す関数
   protected static String getBananaColor(String[] data) {
     return data[0];
