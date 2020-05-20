@@ -36,19 +36,19 @@ public class Ichiro {
   }
 
   // 一郎が空腹かどうかを返す
-  public static boolean isIchiroHungry(String[] data) {
+  public boolean isIchiroHungry(String[] data) {
   // 一郎のデータは配列になってて、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
   return Integer.parseInt(data[0]) < (2000*1.0);
   }
 
   // 一郎の幸福度を返す
-  public static String isIchiroHappyPercent(String[] data) {
+  public String isIchiroHappyPercent(String[] data) {
     // 一郎のデータは配列になってて、２つめが幸福度。
     return data[1];
   }
 
   // 一郎が食べる処理
-  public static void eatIchiro(String[] personData, String fruit, String[] fruitData) {
+  public void eatIchiro(String[] personData, String fruit, String[] fruitData) {
     // 一郎はりんごを食べない
     if (fruit.equals("apple")) {
       return;
