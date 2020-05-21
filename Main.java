@@ -25,9 +25,9 @@ class Main {
 
     String[] family = {"ichirou", "jirou", "saburou"};
 
-    Ichiro ichiro = new Ichiro();
-    Jiro jiro = new Jiro();
-    Saburo saburo = new Saburo();
+    Ichiro ichiro = new Ichiro(0, 0);
+    Jiro jiro = new Jiro(0, 0);
+    Saburo saburo = new Saburo(0, 0, 0, 0);
 
     Scanner sc = new Scanner(System.in);
 
@@ -76,9 +76,9 @@ class Main {
       for (int i = 0; i < family.length; i++) {
         switch (family[i]) {
           case "ichirou":
-            if (ichiro.isHungry(ichiro.ichiroData)) {
-              ichiro.eat(ichiro.ichiroData, fruit, data);
-              if (!ichiro.isHungry(ichiro.ichiroData)) {
+            if (ichiro.isHungry()) {
+              ichiro.eat(fruit, data);
+              if (!ichiro.isHungry()) {
                 manpukuCount++;
               }
             } else {
@@ -86,9 +86,9 @@ class Main {
             }
             break;
           case "jirou":
-            if (jiro.isHungry(jiro.jiroData)) {
-              jiro.eat(jiro.jiroData, fruit, data);
-              if (!jiro.isHungry(jiro.jiroData)) {
+            if (jiro.isHungry()) {
+              jiro.eat(fruit, data);
+              if (!jiro.isHungry()) {
                 manpukuCount++;
               }
             } else {
@@ -96,9 +96,9 @@ class Main {
             }
             break;
           case "saburou":
-            if (saburo.isHungry(saburo.saburoData)) {
-              saburo.eat(saburo.saburoData, fruit, data);
-              if (!saburo.isHungry(saburo.saburoData)) {
+            if (saburo.isHungry()) {
+              saburo.eat(fruit, data);
+              if (!saburo.isHungry()) {
                 manpukuCount++;
               }
             } else {
@@ -117,13 +117,13 @@ class Main {
           System.out.print(family[i] + " : ");
           switch (family[i]) {
             case "ichirou":
-              System.out.print(ichiro.HappyPercent(ichiro.ichiroData) + "%\n");
+              System.out.print(ichiro.HappyPercent() + "%\n");
               break;
             case "jirou":
-              System.out.print(jiro.HappyPercent(jiro.jiroData) + "%\n");
+              System.out.print(jiro.HappyPercent() + "%\n");
               break;
             case "saburou":
-              System.out.print(saburo.HappyPercent(saburo.saburoData) + "%\n");
+              System.out.print(saburo.HappyPercent() + "%\n");
               break;
           }
         }
@@ -135,13 +135,13 @@ class Main {
           System.out.print(family[i] + " : ");
           switch (family[i]) {
             case "ichirou":
-              System.out.println(ichiro.isHungry(ichiro.ichiroData) ? "hungry." : "not hungry");
+              System.out.println(ichiro.isHungry() ? "hungry." : "not hungry");
               break;
             case "jirou":
-              System.out.println(jiro.isHungry(jiro.jiroData) ? "hungry." : "not hungry");
+              System.out.println(jiro.isHungry() ? "hungry." : "not hungry");
               break;
             case "saburou":
-              System.out.println(saburo.isHungry(saburo.saburoData) ? "hungry." : "not hungry");
+              System.out.println(saburo.isHungry() ? "hungry." : "not hungry");
               break;
           }
         }
@@ -156,13 +156,13 @@ class Main {
       System.out.print(family[i] + " : ");
       switch (family[i]) {
         case "ichirou":
-          System.out.println(ichiro.isHungry(ichiro.ichiroData) ? "hungry." : "not hungry");
+          System.out.println(ichiro.isHungry() ? "hungry." : "not hungry");
           break;
         case "jirou":
-          System.out.println(jiro.isHungry(jiro.jiroData) ? "hungry." : "not hungry");
+          System.out.println(jiro.isHungry() ? "hungry." : "not hungry");
           break;
         case "saburou":
-          System.out.println(saburo.isHungry(saburo.saburoData) ? "hungry." : "not hungry");
+          System.out.println(saburo.isHungry() ? "hungry." : "not hungry");
           break;
       }
     }

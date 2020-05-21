@@ -1,23 +1,29 @@
 public class Ichiro extends Player {
 
-  int[] ichiroData = { 0, 0};
+  private int manpuku;
+  private int happyPercent;
+
+  Ichiro(int manpuku, int happyPercent) {
+    this.manpuku = manpuku;
+    this.happyPercent = happyPercent;
+  }
 
   @Override
   // 一郎が空腹かどうかを返す
-  public boolean isHungry(int[] data) {
+  public boolean isHungry() {
   // 一郎のデータは配列になってて、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
-  return data[0] < (2000*1.0);
+  return this.manpuku < (2000*1.0);
   }
 
-  // // 一郎の幸福度を返す
-  // public int HappyPercent(int[] data) {
-  //   // 一郎のデータは配列になってて、２つめが幸福度。
-  //   return data[1];
-  // }
+  // 一郎の幸福度を返す
+  public int HappyPercent() {
+    // 一郎のデータは配列になってて、２つめが幸福度。
+    return this.happyPercent;
+  }
 
   @Override
   // 一郎が食べる処理
-  public void eat(int[] personData, String fruit, String[] fruitData) {
+  public void eat(String fruit, String[] fruitData) {
     // 一郎はりんごを食べない
     if (fruit.equals("apple")) {
       return;
@@ -25,7 +31,6 @@ public class Ichiro extends Player {
     String color = Fruits.getBananaColor(fruitData);
     int amount = Fruits.getBananaAmount(fruitData);
     int taste = Fruits.getBananaTaste(fruitData);
-    int manpuku = personData[0];
 
     // 白色のバナナは２倍の効果
     int kouka = 1;
@@ -33,14 +38,11 @@ public class Ichiro extends Player {
       kouka = 2;
     }
 
-    // 量 * 味　を満腹度に加算する
-    manpuku += amount * taste * kouka;
-
-    // 満腹度データを更新
-    personData[0] = manpuku;
+    // 量 * 味　を満腹度に加算して、満腹度データを更新
+    this.manpuku += amount * taste * kouka;
 
     // 幸福度データを更新する。一郎は量によって幸福度が上がる
-    personData[1] = personData[1] + amount;
+    this.happyPercent = happyPercent + amount;
 
   }
 }

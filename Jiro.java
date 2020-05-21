@@ -1,23 +1,29 @@
 public class Jiro extends Player {
 
-  int[] jiroData = { 0, 0};
+  private int manpuku;
+  private int happyPercent;
+
+  Jiro(int manpuku, int happyPercent) {
+    this.manpuku = manpuku;
+    this.happyPercent = happyPercent;
+  }
 
   @Override
   // 次郎が空腹かどうかを返す
-  public boolean isHungry(int[] data) {
+  public boolean isHungry() {
     // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
-    return data[0] < (2000*0.8);
+    return this.manpuku< (2000*0.8);
   }
 
-  // // 次郎の幸福度を返す
-  // public int HappyPercent(int[] data) {
-  //   // 次郎のデータは配列になってて、２つめが幸福度。
-  //   return data[1];
-  // }
+  // 次郎の幸福度を返す
+  public int HappyPercent() {
+    // 次郎のデータは配列になってて、２つめが幸福度。
+    return this.happyPercent;
+  }
 
   @Override
   // 次郎が食べる処理
-  public void eat(int[] personData, String fruit, String[] fruitData) {
+  public void eat(String fruit, String[] fruitData) {
     // りんご
     if (fruit.equals("apple")) {
       String color = Fruits.getAppleColor(fruitData);
@@ -35,10 +41,10 @@ public class Jiro extends Player {
       }
 
       // 量 * 味 を満腹度に加算する
-      personData[0] += amount * taste;
+      this.manpuku += amount * taste;
 
       // 幸福度データを更新する。次郎は味・色・ブランドによって幸福度が上がる
-      personData[1] += taste * kouka;
+      this.happyPercent += taste * kouka;
 
     // バナナ
     } else {
@@ -53,10 +59,10 @@ public class Jiro extends Player {
       }
 
       // 量 * 味 を満腹度に加算する
-      personData[0] += amount * taste * kouka;
+      this.manpuku += amount * taste * kouka;
 
       // 幸福度データを更新する。次郎はバナナの時は量によって幸福度が上がる
-      personData[1] += amount;
+      this.happyPercent += amount;
     }
 
   }
