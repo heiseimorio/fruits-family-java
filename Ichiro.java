@@ -3,7 +3,8 @@ public class Ichiro extends Player {
   private int manpuku;
   private int happyPercent;
 
-  Ichiro(int manpuku, int happyPercent) {
+  Ichiro(String name, int manpuku, int happyPercent) {
+    super(name);
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
   }
@@ -11,13 +12,13 @@ public class Ichiro extends Player {
   @Override
   // 一郎が空腹かどうかを返す
   public boolean isHungry() {
-  // 一郎のデータは配列になってて、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
+  // 一郎のデータは、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
   return this.manpuku < (2000*1.0);
   }
 
   // 一郎の幸福度を返す
   public int HappyPercent() {
-    // 一郎のデータは配列になってて、２つめが幸福度。
+    // 一郎のデータは、２つめが幸福度。
     return this.happyPercent;
   }
 

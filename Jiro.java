@@ -3,7 +3,8 @@ public class Jiro extends Player {
   private int manpuku;
   private int happyPercent;
 
-  Jiro(int manpuku, int happyPercent) {
+  Jiro(String name, int manpuku, int happyPercent) {
+    super(name);
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
   }
@@ -11,13 +12,13 @@ public class Jiro extends Player {
   @Override
   // 次郎が空腹かどうかを返す
   public boolean isHungry() {
-    // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
+    // 次郎のデータは、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
     return this.manpuku< (2000*0.8);
   }
 
   // 次郎の幸福度を返す
   public int HappyPercent() {
-    // 次郎のデータは配列になってて、２つめが幸福度。
+    // 次郎のデータは、２つめが幸福度。
     return this.happyPercent;
   }
 

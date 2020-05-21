@@ -1,5 +1,17 @@
 public abstract class Player {
 
+  private String name;
+
+  Player(String name) {
+    this.name = name;
+  }
+
+  // 名前を返す
+  public String getName() {
+    return this.name;
+  }
+
+
   // 空腹かどうかを返す
   public abstract boolean isHungry();
 
