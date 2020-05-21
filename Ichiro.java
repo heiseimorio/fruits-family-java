@@ -1,19 +1,21 @@
-public class Ichiro {
+public class Ichiro extends Player {
 
   int[] ichiroData = { 0, 0};
 
+  @Override
   // 一郎が空腹かどうかを返す
   public boolean isHungry(int[] data) {
   // 一郎のデータは配列になってて、１つ目が満腹度。満腹度１００％にならないと空腹感はなくならない子。
   return data[0] < (2000*1.0);
   }
 
-  // 一郎の幸福度を返す
-  public int HappyPercent(int[] data) {
-    // 一郎のデータは配列になってて、２つめが幸福度。
-    return data[1];
-  }
+  // // 一郎の幸福度を返す
+  // public int HappyPercent(int[] data) {
+  //   // 一郎のデータは配列になってて、２つめが幸福度。
+  //   return data[1];
+  // }
 
+  @Override
   // 一郎が食べる処理
   public void eat(int[] personData, String fruit, String[] fruitData) {
     // 一郎はりんごを食べない

@@ -1,13 +1,15 @@
-public class Saburo {
+public class Saburo extends Player {
 
   int[] saburoData = { 0, 0, 0, 0};
 
+  @Override
   // 三郎が空腹かどうかを返す
   public boolean isHungry(int[] data) {
     // 三郎のデータは配列になってて、１つ目がりんごの量、２つ目がりんごの味、３つ目がバナナの量、４つ目がバナナの味
     return (data[0]*data[1]+data[2]*data[3]) < (2000*0.95);
   }
 
+  @Override
   // 三郎の幸福度を返す
   public int HappyPercent(int[] data) {
     // 三郎のデータは配列になってて、１つ目がりんごの量、２つ目がりんごの味、３つ目がバナナの量、４つ目がバナナの味
@@ -15,6 +17,7 @@ public class Saburo {
     return (data[1] * 2 + data[3] * 3);
   }
 
+  @Override
   // 三郎が食べる処理
   public void eat(int[] personData, String fruit, String[] fruitData) {
     // りんご
