@@ -2,40 +2,6 @@ public class Jiro {
 
   int[] jiroData = { 0, 0};
 
-  // バナナの色を返す関数
-  protected static String getBananaColor(String[] data) {
-    return data[0];
-  }
-
-  // バナナの量を返す関数
-  protected static int getBananaAmount(String[] data) {
-    return Integer.parseInt(data[1]) * Integer.parseInt(data[3]);
-  }
-
-  // バナナのうまみ具合を返す関数
-  protected static int getBananaTaste(String[] data) {
-    return Integer.parseInt(data[2]);
-  }
-
-  // りんごの色を返す関数
-  protected static String getAppleColor(String[] data) {
-    return data[0];
-  }
-
-  // りんごの量を返す関数
-  protected static int getAppleAmount(String[] data) {
-    return Integer.parseInt(data[1]);
-  }
-
-  // りんごのうまみ具合を返す関数
-  protected static int getAppleTaste(String[] data) {
-    return Integer.parseInt(data[2]);
-  }
-
-  // りんごのブランドを返す関数
-  protected static String getAppleBland(String[] data) {
-    return data[3];
-  }
   // 次郎が空腹かどうかを返す
   public boolean isHungry(int[] data) {
     // 次郎のデータは配列になってて、１つ目が満腹度。満腹度８０％を超えると空腹感はなくなる子。
@@ -52,10 +18,10 @@ public class Jiro {
   public void eat(int[] personData, String fruit, String[] fruitData) {
     // りんご
     if (fruit.equals("apple")) {
-      String color = getAppleColor(fruitData);
-      int amount = getAppleAmount(fruitData);
-      int taste = getAppleTaste(fruitData);
-      String bland = getAppleBland(fruitData);
+      String color = Fruits.getAppleColor(fruitData);
+      int amount = Fruits.getAppleAmount(fruitData);
+      int taste = Fruits.getAppleTaste(fruitData);
+      String bland = Fruits.getAppleBland(fruitData);
 
       // 効果
       int kouka = 1;
@@ -74,9 +40,9 @@ public class Jiro {
 
     // バナナ
     } else {
-      String color = getBananaColor(fruitData);
-      int amount = getBananaAmount(fruitData);
-      int taste = getBananaTaste(fruitData);
+      String color = Fruits.getBananaColor(fruitData);
+      int amount = Fruits.getBananaAmount(fruitData);
+      int taste = Fruits.getBananaTaste(fruitData);
 
       // 白色のバナナは２倍の効果
       int kouka = 1;
