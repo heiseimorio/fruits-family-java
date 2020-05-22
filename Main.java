@@ -23,16 +23,22 @@ class Main {
     };
     int bananaCount = bananas.length;
 
-    Ichiro ichiro = new Ichiro(0, 0);
-    ichiro.setName("ichiro");
+    // Ichiro ichiro = new Ichiro(0, 0);
+    // ichiro.setName("ichiro");
 
-    Jiro jiro = new Jiro(0, 0);
-    jiro.setName("jiro");
+    // Jiro jiro = new Jiro(0, 0);
+    // jiro.setName("jiro");
 
-    Saburo saburo = new Saburo(0, 0, 0, 0);
-    saburo.setName("saburo");
+    // Saburo saburo = new Saburo(0, 0, 0, 0);
+    // saburo.setName("saburo");
 
-    Player[] family = {ichiro, jiro, saburo};
+    String[] playerNames = {"ichiro", "jiro", "saburo"};
+    Player[] family = {new Ichiro(0, 0), new Jiro(0, 0), new Saburo(0, 0, 0, 0)};
+
+    // 名前をセットする
+    for(int i = 0; i < playerNames.length; i++) {
+      family[i].setName(playerNames[i]);
+    }
 
     Scanner sc = new Scanner(System.in);
 
@@ -79,7 +85,9 @@ class Main {
 
       int manpukuCount = 0;
       for (int i = 0; i < family.length; i++) {
-        System.out.println(family[i].getName());
+
+
+        System.out.println("あなたの名前は " + family[i].getName());
         System.out.println(family[i].isHungry());
 
         if (family[i].isHungry()) {
