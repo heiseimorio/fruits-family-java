@@ -1,12 +1,22 @@
 public class Ichiro extends Player {
 
+  private String name;
   private int manpuku;
   private int happyPercent;
 
-  Ichiro(String name, int manpuku, int happyPercent) {
-    super(name);
+  Ichiro(int manpuku, int happyPercent) {
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
+  }
+
+  @Override
+  public void setName(String name) {
+    this.name = name;
   }
 
   @Override

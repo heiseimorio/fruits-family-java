@@ -1,16 +1,10 @@
 public abstract class Player {
 
-  private String name;
-
-  Player(String name) {
-    this.name = name;
-  }
-
   // 名前を返す
-  public String getName() {
-    return this.name;
-  }
+  public abstract String getName();
 
+  // 名前をセットする
+  public abstract void setName(String name);
 
   // 空腹かどうかを返す
   public abstract boolean isHungry();

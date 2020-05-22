@@ -1,12 +1,23 @@
 public class Jiro extends Player {
 
+  private String name;
   private int manpuku;
   private int happyPercent;
 
-  Jiro(String name, int manpuku, int happyPercent) {
-    super(name);
+  Jiro(int manpuku, int happyPercent) {
+
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
+  }
+
+  @Override
+  public void setName(String name) {
+    this.name = name;
   }
 
   @Override

@@ -1,16 +1,26 @@
 public class Saburo extends Player {
 
+  private String name;
   private int appleMount;
   private int appleTaste;
   private int bananaMount;
   private int bananaTaste;
 
-  Saburo(String name, int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
-    super(name);
+  Saburo(int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
     this.appleMount = appleMount;
     this.appleTaste = appleTaste;
     this.bananaMount =  bananaMount;
     this.bananaTaste =  bananaTaste;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
+  }
+
+  @Override
+  public void setName(String name) {
+    this.name = name;
   }
 
   @Override
