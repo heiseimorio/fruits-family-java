@@ -1,36 +1,12 @@
-public class Fruits {
-  // バナナの色を返す関数
-  public static String getBananaColor(String[] data) {
-    return data[0];
-  }
+public interface Fruits {
 
-  // バナナの量を返す関数
-  public static int getBananaAmount(String[] data) {
-    return Integer.parseInt(data[1]) * Integer.parseInt(data[3]);
-  }
+  // 色を返す関数
+  String getColor();
 
-  // バナナのうまみ具合を返す関数
-  public static int getBananaTaste(String[] data) {
-    return Integer.parseInt(data[2]);
-  }
+  // 量を返す関数
+  int getAmount();
 
-  // りんごの色を返す関数
-  public static String getAppleColor(String[] data) {
-    return data[0];
-  }
+  // うまみ具合を返す関数
+  int getTaste();
 
-  // りんごの量を返す関数
-  public static int getAppleAmount(String[] data) {
-    return Integer.parseInt(data[1]);
-  }
-
-  // りんごのうまみ具合を返す関数
-  public static int getAppleTaste(String[] data) {
-    return Integer.parseInt(data[2]);
-  }
-
-  // りんごのブランドを返す関数
-  public static String getAppleBland(String[] data) {
-    return data[3];
-  }
 }
