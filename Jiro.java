@@ -1,12 +1,18 @@
 public class Jiro extends Player {
 
+  private String name = "jiro";
   private int manpuku;
   private int happyPercent;
 
-  Jiro(String name, int manpuku, int happyPercent) {
-    super(name);
+  Jiro(int manpuku, int happyPercent) {
+
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
   }
 
   @Override
@@ -24,20 +30,23 @@ public class Jiro extends Player {
 
   @Override
   // 次郎が食べる処理
-  public void eat(String fruit, String[] fruitData) {
-    // りんご
+  public void eat(String fruit, Fruits fruitData) {
+    // ハイヒール・りんご
     if (fruit.equals("apple")) {
-      String color = Fruits.getAppleColor(fruitData);
-      int amount = Fruits.getAppleAmount(fruitData);
-      int taste = Fruits.getAppleTaste(fruitData);
-      String bland = Fruits.getAppleBland(fruitData);
+      String color = fruitData.getColor();
+      int amount = fruitData.getAmount();
+      int taste = fruitData.getTaste();
+
+      // Appleクラスにしかないブランド情報を取得
+      Apple apple = (Apple)fruitData;
+      String brand = apple.getBrand();
 
       // 効果
       int kouka = 1;
       if (color.equals("red")) {
         kouka = 2;
       }
-      if (bland.equals("ourin")) {
+      if (brand.equals("ourin")) {
         kouka *= 2;
       }
 
@@ -49,10 +58,9 @@ public class Jiro extends Player {
 
     // バナナ
     } else {
-      String color = Fruits.getBananaColor(fruitData);
-      int amount = Fruits.getBananaAmount(fruitData);
-      int taste = Fruits.getBananaTaste(fruitData);
-
+      String color = fruitData.getColor();
+      int amount = fruitData.getAmount();
+      int taste = fruitData.getTaste();
       // 白色のバナナは２倍の効果
       int kouka = 1;
       if (color.equals("white")) {

@@ -1,16 +1,21 @@
 public class Saburo extends Player {
 
+  private String name = "saburo";
   private int appleMount;
   private int appleTaste;
   private int bananaMount;
   private int bananaTaste;
 
-  Saburo(String name, int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
-    super(name);
+  Saburo(int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
     this.appleMount = appleMount;
     this.appleTaste = appleTaste;
     this.bananaMount =  bananaMount;
     this.bananaTaste =  bananaTaste;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
   }
 
   @Override
@@ -30,16 +35,16 @@ public class Saburo extends Player {
 
   @Override
   // 三郎が食べる処理
-  public void eat(String fruit, String[] fruitData) {
+  public void eat(String fruit, Fruits fruitData) {
     // りんご
     if (fruit.equals("apple")) {
-      this.appleMount += Fruits.getAppleAmount(fruitData); // 量
-      this.appleTaste += Fruits.getAppleTaste(fruitData);  // 味
+      this.appleMount += fruitData.getAmount(); // 量
+      this.appleTaste += fruitData.getTaste();  // 味
 
       // バナナ
     } else {
-      this.bananaMount += Fruits.getBananaAmount(fruitData);  // 量
-      this.bananaTaste += Fruits.getBananaTaste(fruitData);   // 味
+      this.bananaMount += fruitData.getAmount();  // 量
+      this.bananaTaste += fruitData.getTaste();   // 味
     }
 
   }

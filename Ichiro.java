@@ -1,12 +1,17 @@
 public class Ichiro extends Player {
 
+  private String name = "ichiro";
   private int manpuku;
   private int happyPercent;
 
-  Ichiro(String name, int manpuku, int happyPercent) {
-    super(name);
+  Ichiro(int manpuku, int happyPercent) {
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
   }
 
   @Override
@@ -24,14 +29,14 @@ public class Ichiro extends Player {
 
   @Override
   // 一郎が食べる処理
-  public void eat(String fruit, String[] fruitData) {
+  public void eat(String fruit, Fruits fruitData) {
     // 一郎はりんごを食べない
     if (fruit.equals("apple")) {
       return;
     }
-    String color = Fruits.getBananaColor(fruitData);
-    int amount = Fruits.getBananaAmount(fruitData);
-    int taste = Fruits.getBananaTaste(fruitData);
+    String color = fruitData.getColor();
+    int amount = fruitData.getAmount();
+    int taste = fruitData.getTaste();
 
     // 白色のバナナは２倍の効果
     int kouka = 1;
