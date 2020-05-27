@@ -1,3 +1,6 @@
+package main.src.Player;
+import main.src.Fruits.*;
+
 public abstract class Player {
 
   // 名前を返す

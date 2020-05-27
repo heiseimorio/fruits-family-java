@@ -1,3 +1,7 @@
+package main.src.Player;
+import main.src.Fruits.*;
+
+
 public class Saburo extends Player {
 
   private String name = "saburo";
@@ -6,7 +10,7 @@ public class Saburo extends Player {
   private int bananaMount;
   private int bananaTaste;
 
-  Saburo(int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
+  public Saburo(int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
     this.appleMount = appleMount;
     this.appleTaste = appleTaste;
     this.bananaMount =  bananaMount;

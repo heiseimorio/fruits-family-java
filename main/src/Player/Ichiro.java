@@ -1,10 +1,13 @@
+package main.src.Player;
+import main.src.Fruits.*;
+
 public class Ichiro extends Player {
 
   private String name = "ichiro";
   private int manpuku;
   private int happyPercent;
 
-  Ichiro(int manpuku, int happyPercent) {
+  public Ichiro(int manpuku, int happyPercent) {
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;
   }

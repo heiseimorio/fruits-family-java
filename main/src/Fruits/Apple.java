@@ -1,3 +1,4 @@
+package main.src.Fruits;
 public class Apple implements Fruits {
 
   private String color;
@@ -5,7 +6,7 @@ public class Apple implements Fruits {
   private int taste;
   private String brand;
 
-  Apple(String color, int amount, int taste, String brand) {
+  public Apple(String color, int amount, int taste, String brand) {
     this.color = color;
     this.amount = amount;
     this.taste = taste;

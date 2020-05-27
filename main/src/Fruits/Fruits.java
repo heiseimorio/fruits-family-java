@@ -1,3 +1,5 @@
+package main.src.Fruits;
+
 public interface Fruits {
 
   // 色を返す関数

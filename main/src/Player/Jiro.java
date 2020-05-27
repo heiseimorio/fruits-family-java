@@ -1,10 +1,14 @@
+package main.src.Player;
+import main.src.Fruits.*;
+
+
 public class Jiro extends Player {
 
   private String name = "jiro";
   private int manpuku;
   private int happyPercent;
 
-  Jiro(int manpuku, int happyPercent) {
+  public Jiro(int manpuku, int happyPercent) {
 
     this.manpuku = manpuku;
     this.happyPercent = happyPercent;

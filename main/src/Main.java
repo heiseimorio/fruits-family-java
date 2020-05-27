@@ -1,3 +1,6 @@
+package main.src;
+import main.src.Fruits.*;
+import main.src.Player.*;
 import java.util.*;
 
 class Main {
