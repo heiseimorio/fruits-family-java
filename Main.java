@@ -81,6 +81,8 @@ class Main {
         }
       }
 
+      // 他の二人が食べたかどうかの判定をここでする
+
       if (manpukuCount == family.length) {
         System.out.println("");
         System.out.println(" Game Clear !!!! game count is " + gameCount);

@@ -1,4 +1,4 @@
-public class Jiro extends Player {
+public class Jiro extends Player implements EatLook {
 
   private String name = "jiro";
   private int manpuku;
@@ -74,5 +74,15 @@ public class Jiro extends Player {
       this.happyPercent += amount;
     }
 
+  }
+
+  // 他の誰かが何かを食べていたら幸福度は上がるが、食べていなければ幸福度は下がる
+  public int lookEating(boolean eatFlg) {
+    if(eatFlg) {
+      this.happyPercent += 10;
+    } else {
+      this.happyPercent -= 5;
+    }
+    return this.happyPercent;
   }
 }

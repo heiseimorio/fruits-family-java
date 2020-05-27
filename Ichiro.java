@@ -3,6 +3,7 @@ public class Ichiro extends Player {
   private String name = "ichiro";
   private int manpuku;
   private int happyPercent;
+  private boolean eatFlg = false;
 
   Ichiro(int manpuku, int happyPercent) {
     this.manpuku = manpuku;
@@ -32,6 +33,7 @@ public class Ichiro extends Player {
   public void eat(String fruit, Fruits fruitData) {
     // 一郎はりんごを食べない
     if (fruit.equals("apple")) {
+      this.eatFlg = false;
       return;
     }
     String color = fruitData.getColor();
@@ -50,5 +52,12 @@ public class Ichiro extends Player {
     // 幸福度データを更新する。一郎は量によって幸福度が上がる
     this.happyPercent = happyPercent + amount;
 
+    // バナナを食べた時
+    this.eatFlg = true;
+  }
+
+  // 食べたかどうかを返す
+  public boolean isEating() {
+    return this.eatFlg;
   }
 }

@@ -5,6 +5,7 @@ public class Saburo extends Player {
   private int appleTaste;
   private int bananaMount;
   private int bananaTaste;
+  private boolean eatFlg = false;
 
   Saburo(int appleMount, int appleTaste, int bananaMount, int bananaTaste) {
     this.appleMount = appleMount;
@@ -36,6 +37,7 @@ public class Saburo extends Player {
   @Override
   // 三郎が食べる処理
   public void eat(String fruit, Fruits fruitData) {
+    this.eatFlg = true;
     // りんご
     if (fruit.equals("apple")) {
       this.appleMount += fruitData.getAmount(); // 量
@@ -49,4 +51,8 @@ public class Saburo extends Player {
 
   }
 
+  // 食べたかどうかを返す
+  public boolean isEating() {
+    return this.eatFlg;
+  }
 }
