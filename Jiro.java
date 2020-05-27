@@ -76,6 +76,7 @@ public class Jiro extends Player implements EatLook {
 
   }
 
+  @Override
   // 他の誰かが何かを食べていたら幸福度は上がるが、食べていなければ幸福度は下がる
   public int lookEating(boolean eatFlg) {
     if(eatFlg) {
