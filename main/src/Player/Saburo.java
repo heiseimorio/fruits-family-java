@@ -1,5 +1,5 @@
-package main.src.Player;
-import main.src.Fruits.*;
+package main.src.player;
+import main.src.fruits.*;
 
 
 public class Saburo extends Player {

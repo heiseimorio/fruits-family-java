@@ -1,6 +1,7 @@
 package main.src;
-import main.src.Fruits.*;
-import main.src.Player.*;
+import main.src.fruits.*;
+// import main.src.fruitssecret.Check;
+import main.src.player.*;
 import java.util.*;
 
 class Main {
@@ -83,6 +84,7 @@ class Main {
           manpukuCount++;
         }
       }
+
 
       if (manpukuCount == family.length) {
         System.out.println("");

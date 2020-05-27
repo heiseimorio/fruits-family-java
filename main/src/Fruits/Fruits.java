@@ -1,4 +1,4 @@
-package main.src.Fruits;
+package main.src.fruits;
 
 public interface Fruits {
 

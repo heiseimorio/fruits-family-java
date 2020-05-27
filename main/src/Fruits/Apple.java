@@ -1,4 +1,6 @@
-package main.src.Fruits;
+package main.src.fruits;
+import main.src.fruitssecret.Check;
+
 public class Apple implements Fruits {
 
   private String color;
@@ -7,6 +9,7 @@ public class Apple implements Fruits {
   private String brand;
 
   public Apple(String color, int amount, int taste, String brand) {
+    Check.check();
     this.color = color;
     this.amount = amount;
     this.taste = taste;

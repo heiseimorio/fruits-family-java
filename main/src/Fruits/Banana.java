@@ -1,4 +1,6 @@
-package main.src.Fruits;
+package main.src.fruits;
+import main.src.fruitssecret.Check;
+
 public class Banana implements Fruits {
 
   private String color;
@@ -15,6 +17,7 @@ public class Banana implements Fruits {
 
   // バナナの色を返す関数
   public String getColor() {
+    Check.check();
     return this.color;
   }
 
